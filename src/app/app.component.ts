@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   onAdd88Click() {
-    this.count += 86;
+    this.count += 88;
   }
 
   reset() {
