@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  count = 0;
+
+  onCounterClick() {
+    this.count++;
+  }
+
+  onAdd2Click() {
+    this.count += 2;
+  }
+
+  onAdd88Click() {
+    this.count += 86;
+  }
+
+  reset() {
+    this.count = 0;
+  }
 }

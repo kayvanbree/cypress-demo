@@ -1,0 +1,12 @@
+.block {
+  min-height: 50px;
+  background: grey;
+  text-align: center;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
