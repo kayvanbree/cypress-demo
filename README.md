@@ -43,17 +43,30 @@ Click `run all specs`
 
 ## Chapter 2: Creating a test
 
+Test 1:
+
 - Go to localhost
 - Click the Add 1 button
-- Check the count
+- Count is 1
+
+Test 2:
 
 - Go to localhost
 - Click the Add 2 button
-- Check the count
+- Count is 2
+
+Test 3:
 
 - Go to localhost
 - Click the Add 88 button
-- Check the count
+- Count is 88
+
+Test 4:
+
+- Go to localhost
+- Click the Add buttons a bunch of times
+- Click the reset button
+- Count is 0
 
 ## Chapter 3: Running a test
 
