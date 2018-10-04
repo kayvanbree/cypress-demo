@@ -1,27 +1,86 @@
-# CypressDemo
+# Cypress Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Cypress is/can be used as:
 
-## Development server
+- UI testing tool
+- Integration testing tool (spin up environment, run cypress, kill environment)
+- API testing tool (make requests to API, check if response contains stuff)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Why Cypress is awesome:
 
-## Code scaffolding
+- Great documentation
+- Active community
+- Open Source (the test runner, not dashboards)
+- It just works
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The Cypress roadmap
 
-## Build
+## Demo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Using master branch
+- Using DockPanels
 
-## Running unit tests
+## Starting
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+First, install Cypress:
 
-## Running end-to-end tests
+```javascript
+npm install cypress --save-dev
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Chapter 1: Running Cypress' standard tests
 
-## Further help
+Create a script in package.json:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```json
+"cypress:open": "cypress open"
+```
+
+Add it to WebStorm run configs and run.
+
+Click `run all specs`
+
+
+## Chapter 2: Creating a test
+
+Test 1:
+
+- Go to localhost
+- Click the Add 1 button
+- Count is 1
+
+Test 2:
+
+- Go to localhost
+- Click the Add 2 button
+- Count is 2
+
+Test 3:
+
+- Go to localhost
+- Click the Add 88 button
+- Count is 88
+
+Test 4:
+
+- Go to localhost
+- Click the Add buttons a bunch of times
+- Click the reset button
+- Count is 0
+
+## Chapter 3: Running a test
+
+Using `cypress run` to show off CI capabilities
+
+## Chapter 4: Debugging
+
+- Running a spec
+- labels
+
+## Chapter 5: Test driven development
+
+First, install the Cypress Cucumber plugin:
+
+```javascript
+npm install cypress-cucumber-preprocessor --save-dev
+```
