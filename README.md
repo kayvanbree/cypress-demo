@@ -12,6 +12,8 @@ Why Cypress is awesome:
 - Active community
 - Open Source (the test runner, not dashboards)
 - It just works (one library, not one for assertion, one for this, one for that)
+- Cypress runs OUTSIDE your application (it does not know about your code)
+- Cypress can test ANY Javascript application
 - Great debugging tool
 - Intuitive, easy syntax
 
