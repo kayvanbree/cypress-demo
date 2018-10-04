@@ -1,23 +1,74 @@
 # Cypress Demo
 
-Cypress is/can be used as:
+## Doel van deze presentatie
+
+- Kennismaking met Cypress
+	- Waar is het voor?
+	- Waarom is Cypress gaaf?
+	- Wat kan Cypress?
+	- Wat kan Cypress niet?
+	- Wat staat nog op de roadmap?
+- Geen in depth code (wel een beetje natuurlijk!)
+- Laten zien van:
+	- Kleine code voorbeelden
+	- Cypress' eigen demos
+	- Hoe gebruik ik Cypress in de DockPanels library?
+	- Cypress in command line (voor CI)
+	- Cypress als TDD tool
+
+## Cypress is/can be used as:
 
 - UI testing tool
 - Integration testing tool (spin up environment, run cypress, kill environment)
 - API testing tool (make requests to API, check if response contains stuff)
 
-Why Cypress is awesome:
+## Why Cypress is awesome:
 
 - Great documentation
 - Active community
 - Open Source (the test runner, not dashboards)
 - It just works (one library, not one for assertion, one for this, one for that)
-- Cypress runs OUTSIDE your application (it does not know about your code)
-- Cypress can test ANY Javascript application
 - Great debugging tool
 - Intuitive, easy syntax
 
-The Cypress roadmap
+## Wat kan Cypress?
+
+- API requests sturen (CORS wordt genegeerd)
+- Server stubben (lege/slechte requests terug sturen voor error handling)
+- Data stores manipuleren
+- Functies stubben
+- Event listeners toevoegen
+- Websockets messages faken
+- 3rd party scripts laden
+- Functies direct aanroepen
+- Functionaliteit skippen (geen UI gebruiken om state op te bouwen)
+
+Wat kan Cypress niet?
+
+https://docs.cypress.io/guides/references/trade-offs.html#Permanent-trade-offs-1
+
+- Automation tool (niet voor bedoeld)
+- Meerdere tabbladen/windows (op te lossen door tests anders te schrijven)
+- Commands buiten de browser runnen
+- Meerdere browsers tegelijk runnen (multi-user is te stubben/mocken)
+- Verschillende domeinen testen (inloggen etc kan op andere manieren)
+
+Wat kan Cypress NOG niet?
+
+- Parallel testen
+- Andere browsers dan Chrome en Electron (Firefox support onderweg!)
+- Native events
+- Upload inputs gebruiken (is vaak om heen te werken)
+- Downloads (is grotendeels te stubben)
+- IFrames (limited)
+
+## Running a test
+
+Using `cypress run` to show off CI capabilities
+
+## Demonstrating DockPanels tests
+
+## Demonstrating Cypress demos
 
 ## Starting
 
@@ -27,7 +78,7 @@ First, install Cypress:
 npm install cypress --save-dev
 ```
 
-## Chapter 1: Running Cypress' standard tests
+## Running Cypress' standard tests
 
 Create a script in package.json:
 
@@ -40,7 +91,7 @@ Add it to WebStorm run configs and run.
 Click `run all specs`
 
 
-## Chapter 2: Creating a test
+## Creating a test
 
 Test 1:
 
@@ -85,20 +136,12 @@ context('Actions', () => {
 });
 ```
 
-## Chapter 3: Running a test
-
-Using `cypress run` to show off CI capabilities
-
-## Chapter 4: Demonstrating DockPanels tests
-
-## Chapter 5: Demonstrating Cypress demos
-
-## Chapter 4: Debugging
+## Debugging
 
 - Running a spec
 - labels
 
-## Chapter 5: Test driven development
+## Test driven development
 
 First, install the Cypress Cucumber plugin:
 
@@ -106,10 +149,11 @@ First, install the Cypress Cucumber plugin:
 npm install cypress-cucumber-preprocessor --save-dev
 ```
 
-## Chapter 6: Writing a test with a form
+- Test schrijven:
 
-## Chapter 7: Aliasing
-
-## Chapter 8: Assertion
-
-## Chapter 9: 
+```
+Given I am on the webpage
+When I type "Hallo Hackerscafe!" in the text field
+And I click send
+Then the label should say "Hallo Hackerscafe!"
+```
