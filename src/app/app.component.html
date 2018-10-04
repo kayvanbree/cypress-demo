@@ -1,13 +1,13 @@
 <div class="container">
   <div class="block">
     <h1>Feature 1</h1>
-    <button (click)="onCounterClick()">Add 1</button>
-    <button (click)="onAdd2Click()">Add 2</button>
-    <button (click)="onAdd88Click()">Add 88</button>
+    <button cy-data="add-1" (click)="onCounterClick()">Add 1</button>
+    <button cy-data="add-2" (click)="onAdd2Click()">Add 2</button>
+    <button cy-data="add-88" (click)="onAdd88Click()">Add 88</button>
     <br><br>
-    <div>Count: {{count}}</div>
+    <div cy-data="count" >Count: {{count}}</div>
     <br><br>
-    <button (click)="reset()">Reset</button>
+    <button cy-data="reset" (click)="reset()">Reset</button>
   </div>
 </div>
 
