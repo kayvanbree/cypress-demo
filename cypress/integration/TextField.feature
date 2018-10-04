@@ -1,6 +1,6 @@
-Feature: Add and remove panels
+Feature: Textfield stuff
 
-  Scenario: Adding a panel
+  Scenario: Label should say what we type
     Given I am on the webpage
     When I type "Hallo Hackerscafe!" in the text field
     And I click send
