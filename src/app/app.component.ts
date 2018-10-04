@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public inputText = '';
+  public output = '';
+
+  public onSubmit(): void {
+    this.output = this.inputText;
+  }
 }
