@@ -151,9 +151,82 @@ npm install cypress-cucumber-preprocessor --save-dev
 
 - Test schrijven:
 
+Cucumber stuff:
+
 ```
-Given I am on the webpage
-When I type "Hallo Hackerscafe!" in the text field
-And I click send
-Then the label should say "Hallo Hackerscafe!"
+Feature: Textfield stuff
+
+  Scenario: Label should say what we type
+    Given I am on the webpage
+    When I type "Hallo Hackerscafe!" in the text field
+    And I click send
+    Then the label should say "Hallo Hackerscafe!"
+```
+
+Steps:
+
+```javascript
+/* global Given, When, Then */
+
+const url = 'http://localhost:4204/';
+
+Given(/^I am on the webpage$/, () => {
+  cy.visit(url);
+});
+
+When(/^I type "(.*?)" in the text field$/, (text) => {
+  cy.get('[cy-data=textfield]')
+    .type(text);
+});
+
+When(/^I click send$/, (dock) => {
+  cy.get('[cy-data=submit]')
+    .click();
+});
+
+Then(/^the label should say "(.*?)"$/, (text) => {
+  cy.get('[cy-data=label]')
+    .contains(text);
+});
+```
+
+HTML:
+
+```html
+<div class="container">
+  <div class="block">
+    <h1>Feature 1</h1>
+    <form (submit)="onSubmit()">
+      <input type="text" [(ngModel)]="inputText" name="myText" cy-data="textfield">
+      <input type="submit" cy-data="submit" value="Verstuur!">
+    </form>
+  </div>
+
+  <div class="block">
+    <h1>Output</h1>
+    <span cy-data="label">{{output}}</span>
+  </div>
+</div>
+
+```
+
+Javascript:
+
+```javascript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  public inputText = '';
+  public output = '';
+
+  public onSubmit(): void {
+    this.output = this.inputText;
+  }
+}
+
 ```
